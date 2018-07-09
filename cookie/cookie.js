@@ -6,6 +6,13 @@ export default {
         exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
         document.cookie = name + "=" + decodeURIComponent(value) + ";expires= " + exp.toGMTString() + ";path=/";
     },
+    setMinCookie(name, value, mins) //两个参数，一个是cookie的名子，一个是值
+    {
+        var Mins = mins; //此 cookie 将被保存 60 秒
+        var exp = new Date(); //new Date("December 31, 9998");
+        exp.setTime(exp.getTime() + Mins * 60 * 1000);
+        document.cookie = name + "=" + decodeURIComponent(value) + ";expires= " + exp.toGMTString() + ";path=/";
+    },
 
 
     getCookie(name) //取cookies函数        
